@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+:root{
+  --body-bg: hsl(228deg 42% 95%);
+  --bg-white: hsl(0deg 0% 100%);
+  --text-secondary-clr: hsl(214deg 17% 65%);
+  --purple: rgb(135, 96, 251);
+  --orange: #eb6f33;
+  --green: #03c895;
+  --blue: #01b8ff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+body{
+  background: var(--body-bg);
+  padding: 24px;
+  font-family: Roboto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.summary-box-container,
+.profit-box-container,
+.overview-container{
+  background: var(--bg-white);
+  /* width: 300%; */
+  padding: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.profit-box-container, 
+.overview-container{
+  /* background: hsl(0deg 0% 100%);
+  /* width: 300%; */
+  /* padding: 16px; */ 
+  margin-top: 24px;
+}
+
+.summary-box-time-container{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  color: var(--text-secondary-clr);
+}
+
+.summary-box-time-container > p, 
+.profit-box-time-container > p  {
+margin: 6px 0px;
+}
+
+.summary-box-text{
+  color: hsl(218deg 18% 43%);
+  margin: 0;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.summary-box-number,
+.profit-box-number{
+  color: hsl(212deg 23% 26%);
+  font-size: 28px;
+  margin: 0;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.profit-box-sub-text{
+  color: var(--text-secondary-clr);
+  margin: 0;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+.profit-box-heading{
+  margin: 0;
+  font-weight: 500;
+}
+
+.summary-box-spec, 
+.profit-box-time-container,
+.overview-spec{
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.profit-box-time-container > p:first-child {
+  color: hsl(214deg 17% 65%);
 }
 
-.App-link {
-  color: #61dafb;
+.percent-box-container{
+display: flex;
+flex-direction: column;
+gap: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.summary-box-list{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 1200px){
+  .summary-box-list{
+    grid-template-columns: repeat (4, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 500px){
+  .summary-box-list{
+    grid-template-columns: repeat (2, 1fr);
   }
 }
